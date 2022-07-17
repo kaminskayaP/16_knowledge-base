@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/choices.css">
+  <link rel="stylesheet" href="/css/simplebar.css">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css">
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/svg-arrow.css">
+  <link rel="stylesheet" href="/css/justValidateTooltip.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=7c24e02f-759f-46f0-ad01-8a709bca4dbe&lang=ru_RU" type="text/javascript"></script>
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <div class="check-select-container">
+    <section class="section section-checkbox">
+      <h1 class="section-checkbox__header">Категории:</h1>
+      <form class="section-checkbox__form">
+        <div class="section-checkbox__string">
+          <label for="dino" class="section-checkbox__label">
+          <input type="checkbox" id="dino" name="category" class="section-checkbox__input">
+          Динозавры
+          <span class="section-checkbox__custom-check"></span>
+          </label>
+        </div>
+        <div class="section-checkbox__string">
+          <label for="bear" class="section-checkbox__label">
+          <input type="checkbox" id="bear" name="category" class="section-checkbox__input">
+          Медведи
+          <span class="section-checkbox__custom-check"></span>
+          </label>
+        </div>
+        <div class="section-checkbox__string">
+          <label for="roe" class="section-checkbox__label">
+          <input type="checkbox" id="roe" name="category" class="section-checkbox__input">
+          Косули
+          <span class="section-checkbox__custom-check"></span>
+          </label>
+        </div>
+        <div class="section-checkbox__string">
+          <label for="fox" class="section-checkbox__label">
+          <input type="checkbox" id="fox" name="category" class="section-checkbox__input">
+          Лисы
+          <span class="section-checkbox__custom-check"></span>
+          </label>
+        </div>
+        <div class="section-checkbox__string">
+          <label for="wolf" class="section-checkbox__label">
+          <input type="checkbox" id="wolf" name="category" class="section-checkbox__input">
+          Волки
+          <span class="section-checkbox__custom-check"></span>
+          </label>
+        </div>
+        <div class="section-checkbox__string">
+          <label for="deer" class="section-checkbox__label">
+          <input type="checkbox" id="deer" name="category" class="section-checkbox__input">
+          Олени и лоси
+          <span class="section-checkbox__custom-check"></span>
+          </label>
+        </div>
+      </form>
+    </section>
+    <section class="section section-select">
+      <select name="material" id="material"> 
+        <option value="Материал"disabled selected>Материал</option>
+        <option value="Древисина" class="option-img"> Древесина</option>
+        <option value="Металл">Металл</option>
+        <option value="Камень">Камень</option>
+        <option value="Пластик">Пластик</option>
+        <option value="Композитный">Композитный</option>
+        <option value="Гипс">Гипс</option>
+      </select>
+    </section>
+  </div>
+  <section class="section section-map">
+    <div id="map" class="section-map__map">
+    </div>
+  </section>
+  <section class="section section-scrollbar">
+    <div class="section-scrollbar__scrollbar-container">
+      <div class="section-scrollbar__scrollbar-area" id="myEl">
+        <p>
+          Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для первоочередных требований.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section section-tooltip">
+    <div class="section-tooltip__tooltip-contaner">
+      <p class="section-tooltip__tooltip-text">
+        Следует отметить, что социально&#8209;экономическое развитие способствует повышению качества переосмысления внешнеэкономических политик.
+     </p>
+      <svg class="section-tooltip__tooltip-icon" id="tooltip" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8 3C7.33333 3 7 3.31919 7 3.95758C7 4.60026 7.33333 4.92159 8 4.92159C8.33333 4.92159 8.58233 4.83805 8.74699 4.67095C8.91566 4.49957 9 4.26178 9 3.95758C9 3.31919 8.66667 3 8 3ZM7.07831 13H8.91566V5.81491H7.07831V13Z" fill="#BCBCBC"/>
+      </svg>
+    </div>
+  </section>
+  <section class="section section-form">
+    <form action="" class="section-form__form">
+      <div class="section-form__input-container">
+        <input class="section-form__input" id ="name"name="name" type="text" placeholder="Имя*" data-validate-field="name">
+      </div>
+      <div class="section-form__input-container">
+        <input class="section-form__input" id="tel" name="tel" type="tel" placeholder="Телефон*" data-validate-field="tel" data-validate-rules="phone">
+      </div>
+      <div class="section-form__input-container">
+        <input class="section-form__input" id="email" name="email" type="email" placeholder="E-mail*" data-validate-field="email">
+      </div>
+      <div class="section-form__button-contaner">
+        <button class="section-form__button">Заказать</button>
+      </div>
+    </form>
+  </section>
+
+  <script src="js/choices.min.js"></script>
+  <script src="js/select.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/simplebar.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/tooltip.js"></script>
+  <script src="js/inputmask.js"></script>
+  <script src="js/just-validate.min.js"></script>
+  <script src="js/form.js"></script>
+ 
+</body>
+</html>

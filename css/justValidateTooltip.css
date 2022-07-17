@@ -1,0 +1,32 @@
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+.just-validate-tooltip-container {
+  position: relative; }
+
+.just-validate-tooltip-hide {
+  -webkit-animation: fadeOut .4s linear;
+          animation: fadeOut .4s linear;
+  opacity: 0; }
+
+.js-validate-error-label {
+  position: absolute;
+  top: -22px;
+  left: 12px;
+  z-index: 10;
+  color: var(--form-button-color) !important;
+  padding: 4px 8px;
+  font-family: 'Roboto';
+  font-size: 12px;
+  line-height: 14px;
+  pointer-events: none;
+  transition: all .4s linear; }
